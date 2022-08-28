@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Dropdown from "../dropdown/Dropdown"
 import "./header.css"
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
                     <div className="header-content">
                         <h1 className="logo"><Link to="/">LOGO</Link></h1>
                         <nav className="nav">
-                            <li>Menu</li>
+                            <li><Dropdown></Dropdown></li>
                         </nav>
                         <div className="header-search">
                             
