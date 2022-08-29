@@ -1,0 +1,63 @@
+.actionDrop {
+    padding: .3rem 1rem;
+    background-color: #8bc0eb;
+    border: 1px solid #8bc0eb;
+    color: #fff;
+    border-radius: 5px;
+    position: relative
+}
+
+.actionDrop .menuDrop {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    padding: 10px 20px;
+    background: #8bc0eb;
+    width: 200px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.actionDrop .menuDrop.active {
+    top: 60px;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.actionDrop .menuDrop::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    background: #8bc0eb;
+    transform: rotate(45deg);
+}
+
+.actionDrop .menuDrop ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.actionDrop .menuDrop ul li:hover {
+    color: #ffffff;
+}
+
+.align-left .menuDrop ul li {
+    justify-content: start;
+}
+
+.align-right .menuDrop ul li {
+    justify-content: end;
+}
