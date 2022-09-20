@@ -1,0 +1,45 @@
+.to-do {
+  width: 100vw;
+  margin-top: 3rem;
+}
+
+.to-do .content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.to-do .content .input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.to-do .content .input-box input {
+  width: 400px;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  outline: none;
+}
+
+.to-do .content .input-box .submit {
+  padding: .6rem 1rem;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  background-color: rgb(97, 216, 143);
+  border-radius: 5px;
+}
+
+.to-do .content .input-box .refresh {
+  padding: .3rem .5rem;
+  border: none;
+  color: #fff;
+  background-color: rgb(97, 172, 216);
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.to-do .content .list {
+  margin-top: 2rem;
+}
