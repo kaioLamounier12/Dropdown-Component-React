@@ -4,23 +4,13 @@ import "./toDo.css"
 
 const ToDo = () => {
 
-  const [list, setList] = useState([])
+  const [list, setList] = useState<string[]>([])
   const [openList, setOpenList] = useState(false)
   const [taskInput, setTaskInput] = useState("")
-
-
-  const getValues = (ev) => {
-    const { name, value } = ev.target
-
-    if(name === "task"){
-      setTaskInput(value)
-    }
-  }
 
   const addTask = () => {
     if(!!taskInput){
       fb.task.add({text: taskInput}).then(() => {
-        document.querySelector("form").reset();
         setTaskInput("")
         console.log("Enviado")
       }).catch(error => {console.log(error)})
@@ -28,9 +18,9 @@ const ToDo = () => {
   }
 
   const getList = () => {
-    fb.task.list().then((list) => {
-      let listAux = []
-      list.forEach((doc) => {
+    fb.task.list().then((listFb) => {
+      let listAux: string[] = [];
+      listFb.forEach((doc) => {
         let str = doc.data().text
         listAux.push(str)
       })
@@ -54,7 +44,7 @@ const ToDo = () => {
         <div className="content">
           <div className="input-box">
             <form>
-              <input type="text" placeholder="Digite aqui..." name="task" onChange={getValues}/>
+              <input type="text" placeholder="Digite aqui..." name="task" value={taskInput} onChange={(e) => {setTaskInput(e.target.value)}}/>
             </form>
             <button className="submit" onClick={addTask}>Submit</button>
             <button className="refresh" onClick={refreshList}>&#8634;</button>
